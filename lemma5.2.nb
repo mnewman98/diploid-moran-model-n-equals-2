@@ -1,0 +1,1172 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[     43776,       1164]
+NotebookOptionsPosition[     42352,       1130]
+NotebookOutlinePosition[     42788,       1147]
+CellTagsIndexPosition[     42745,       1144]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{
+   "Here", " ", "we", " ", "calculate", " ", "the", " ", "second", " ", 
+    "moment", " ", "of", " ", "the", " ", "conditional", " ", "survival", " ",
+     "probability", " ", "described", " ", "in", " ", "Lemma", " ", "5.2"}], 
+   "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"A", "[", "lambda", "]"}], " ", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "12"}], ",", "8", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"lambda", "/", "2"}], ",", " ", 
+       RowBox[{
+        RowBox[{"-", "6"}], "-", 
+        RowBox[{"lambda", "/", "2"}]}], ",", " ", "2"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", " ", "lambda", ",", " ", 
+       RowBox[{
+        RowBox[{"-", "2"}], "-", "lambda"}]}], "}"}]}], "}"}]}]}]], "Input",
+ CellChangeTimes->{{3.9352297201221256`*^9, 3.9352297721699505`*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"47f6d45d-0329-ff4b-93fc-e395cad36dac"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "12"}], ",", "8", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     FractionBox["lambda", "2"], ",", 
+     RowBox[{
+      RowBox[{"-", "6"}], "-", 
+      FractionBox["lambda", "2"]}], ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "lambda", ",", 
+     RowBox[{
+      RowBox[{"-", "2"}], "-", "lambda"}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.935229773324848*^9, 3.93522993050605*^9},
+ CellLabel->"Out[1]=",ExpressionUUID->"0a1bdf89-233d-5d46-bf40-7018a792224f"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"ExpA", "[", 
+   RowBox[{"t", ",", " ", "lambda"}], "]"}], " ", "=", " ", 
+  RowBox[{"MatrixExp", "[", 
+   RowBox[{"t", "*", 
+    RowBox[{"A", "[", "lambda", "]"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.935229775592348*^9, 3.935229799314871*^9}},
+ CellLabel->"In[2]:=",ExpressionUUID->"1f055f82-ec0b-1047-a1b8-24ceb1640de1"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"RootSum", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"1152", "+", 
+         RowBox[{"416", " ", "lambda"}], "+", 
+         RowBox[{"16", " ", 
+          SuperscriptBox["lambda", "2"]}], "+", 
+         RowBox[{"432", " ", "#1"}], "+", 
+         RowBox[{"76", " ", "lambda", " ", "#1"}], "+", 
+         RowBox[{"2", " ", 
+          SuperscriptBox["lambda", "2"], " ", "#1"}], "+", 
+         RowBox[{"40", " ", 
+          SuperscriptBox["#1", "2"]}], "+", 
+         RowBox[{"3", " ", "lambda", " ", 
+          SuperscriptBox["#1", "2"]}], "+", 
+         SuperscriptBox["#1", "3"]}], "&"}], ",", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"48", " ", 
+            SuperscriptBox["\[ExponentialE]", 
+             FractionBox[
+              RowBox[{"t", " ", "#1"}], "2"]]}], "+", 
+           RowBox[{"20", " ", 
+            SuperscriptBox["\[ExponentialE]", 
+             FractionBox[
+              RowBox[{"t", " ", "#1"}], "2"]], " ", "lambda"}], "+", 
+           RowBox[{"2", " ", 
+            SuperscriptBox["\[ExponentialE]", 
+             FractionBox[
+              RowBox[{"t", " ", "#1"}], "2"]], " ", 
+            SuperscriptBox["lambda", "2"]}], "+", 
+           RowBox[{"16", " ", 
+            SuperscriptBox["\[ExponentialE]", 
+             FractionBox[
+              RowBox[{"t", " ", "#1"}], "2"]], " ", "#1"}], "+", 
+           RowBox[{"3", " ", 
+            SuperscriptBox["\[ExponentialE]", 
+             FractionBox[
+              RowBox[{"t", " ", "#1"}], "2"]], " ", "lambda", " ", "#1"}], 
+           "+", 
+           RowBox[{
+            SuperscriptBox["\[ExponentialE]", 
+             FractionBox[
+              RowBox[{"t", " ", "#1"}], "2"]], " ", 
+            SuperscriptBox["#1", "2"]}]}], ")"}], "/", 
+         RowBox[{"(", 
+          RowBox[{"432", "+", 
+           RowBox[{"76", " ", "lambda"}], "+", 
+           RowBox[{"2", " ", 
+            SuperscriptBox["lambda", "2"]}], "+", 
+           RowBox[{"80", " ", "#1"}], "+", 
+           RowBox[{"6", " ", "lambda", " ", "#1"}], "+", 
+           RowBox[{"3", " ", 
+            SuperscriptBox["#1", "2"]}]}], ")"}]}], "&"}]}], "]"}], ",", 
+     RowBox[{"16", " ", 
+      RowBox[{"RootSum", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"1152", "+", 
+          RowBox[{"416", " ", "lambda"}], "+", 
+          RowBox[{"16", " ", 
+           SuperscriptBox["lambda", "2"]}], "+", 
+          RowBox[{"432", " ", "#1"}], "+", 
+          RowBox[{"76", " ", "lambda", " ", "#1"}], "+", 
+          RowBox[{"2", " ", 
+           SuperscriptBox["lambda", "2"], " ", "#1"}], "+", 
+          RowBox[{"40", " ", 
+           SuperscriptBox["#1", "2"]}], "+", 
+          RowBox[{"3", " ", "lambda", " ", 
+           SuperscriptBox["#1", "2"]}], "+", 
+          SuperscriptBox["#1", "3"]}], "&"}], ",", 
+        RowBox[{
+         FractionBox[
+          RowBox[{
+           RowBox[{"4", " ", 
+            SuperscriptBox["\[ExponentialE]", 
+             FractionBox[
+              RowBox[{"t", " ", "#1"}], "2"]]}], "+", 
+           RowBox[{"2", " ", 
+            SuperscriptBox["\[ExponentialE]", 
+             FractionBox[
+              RowBox[{"t", " ", "#1"}], "2"]], " ", "lambda"}], "+", 
+           RowBox[{
+            SuperscriptBox["\[ExponentialE]", 
+             FractionBox[
+              RowBox[{"t", " ", "#1"}], "2"]], " ", "#1"}]}], 
+          RowBox[{"432", "+", 
+           RowBox[{"76", " ", "lambda"}], "+", 
+           RowBox[{"2", " ", 
+            SuperscriptBox["lambda", "2"]}], "+", 
+           RowBox[{"80", " ", "#1"}], "+", 
+           RowBox[{"6", " ", "lambda", " ", "#1"}], "+", 
+           RowBox[{"3", " ", 
+            SuperscriptBox["#1", "2"]}]}]], "&"}]}], "]"}]}], ",", 
+     RowBox[{"64", " ", 
+      RowBox[{"RootSum", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"1152", "+", 
+          RowBox[{"416", " ", "lambda"}], "+", 
+          RowBox[{"16", " ", 
+           SuperscriptBox["lambda", "2"]}], "+", 
+          RowBox[{"432", " ", "#1"}], "+", 
+          RowBox[{"76", " ", "lambda", " ", "#1"}], "+", 
+          RowBox[{"2", " ", 
+           SuperscriptBox["lambda", "2"], " ", "#1"}], "+", 
+          RowBox[{"40", " ", 
+           SuperscriptBox["#1", "2"]}], "+", 
+          RowBox[{"3", " ", "lambda", " ", 
+           SuperscriptBox["#1", "2"]}], "+", 
+          SuperscriptBox["#1", "3"]}], "&"}], ",", 
+        RowBox[{
+         FractionBox[
+          SuperscriptBox["\[ExponentialE]", 
+           FractionBox[
+            RowBox[{"t", " ", "#1"}], "2"]], 
+          RowBox[{"432", "+", 
+           RowBox[{"76", " ", "lambda"}], "+", 
+           RowBox[{"2", " ", 
+            SuperscriptBox["lambda", "2"]}], "+", 
+           RowBox[{"80", " ", "#1"}], "+", 
+           RowBox[{"6", " ", "lambda", " ", "#1"}], "+", 
+           RowBox[{"3", " ", 
+            SuperscriptBox["#1", "2"]}]}]], "&"}]}], "]"}]}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"lambda", " ", 
+      RowBox[{"RootSum", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"1152", "+", 
+          RowBox[{"416", " ", "lambda"}], "+", 
+          RowBox[{"16", " ", 
+           SuperscriptBox["lambda", "2"]}], "+", 
+          RowBox[{"432", " ", "#1"}], "+", 
+          RowBox[{"76", " ", "lambda", " ", "#1"}], "+", 
+          RowBox[{"2", " ", 
+           SuperscriptBox["lambda", "2"], " ", "#1"}], "+", 
+          RowBox[{"40", " ", 
+           SuperscriptBox["#1", "2"]}], "+", 
+          RowBox[{"3", " ", "lambda", " ", 
+           SuperscriptBox["#1", "2"]}], "+", 
+          SuperscriptBox["#1", "3"]}], "&"}], ",", 
+        RowBox[{
+         FractionBox[
+          RowBox[{
+           RowBox[{"4", " ", 
+            SuperscriptBox["\[ExponentialE]", 
+             FractionBox[
+              RowBox[{"t", " ", "#1"}], "2"]]}], "+", 
+           RowBox[{"2", " ", 
+            SuperscriptBox["\[ExponentialE]", 
+             FractionBox[
+              RowBox[{"t", " ", "#1"}], "2"]], " ", "lambda"}], "+", 
+           RowBox[{
+            SuperscriptBox["\[ExponentialE]", 
+             FractionBox[
+              RowBox[{"t", " ", "#1"}], "2"]], " ", "#1"}]}], 
+          RowBox[{"432", "+", 
+           RowBox[{"76", " ", "lambda"}], "+", 
+           RowBox[{"2", " ", 
+            SuperscriptBox["lambda", "2"]}], "+", 
+           RowBox[{"80", " ", "#1"}], "+", 
+           RowBox[{"6", " ", "lambda", " ", "#1"}], "+", 
+           RowBox[{"3", " ", 
+            SuperscriptBox["#1", "2"]}]}]], "&"}]}], "]"}]}], ",", 
+     RowBox[{"RootSum", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"1152", "+", 
+         RowBox[{"416", " ", "lambda"}], "+", 
+         RowBox[{"16", " ", 
+          SuperscriptBox["lambda", "2"]}], "+", 
+         RowBox[{"432", " ", "#1"}], "+", 
+         RowBox[{"76", " ", "lambda", " ", "#1"}], "+", 
+         RowBox[{"2", " ", 
+          SuperscriptBox["lambda", "2"], " ", "#1"}], "+", 
+         RowBox[{"40", " ", 
+          SuperscriptBox["#1", "2"]}], "+", 
+         RowBox[{"3", " ", "lambda", " ", 
+          SuperscriptBox["#1", "2"]}], "+", 
+         SuperscriptBox["#1", "3"]}], "&"}], ",", 
+       RowBox[{
+        FractionBox[
+         RowBox[{
+          RowBox[{"96", " ", 
+           SuperscriptBox["\[ExponentialE]", 
+            FractionBox[
+             RowBox[{"t", " ", "#1"}], "2"]]}], "+", 
+          RowBox[{"48", " ", 
+           SuperscriptBox["\[ExponentialE]", 
+            FractionBox[
+             RowBox[{"t", " ", "#1"}], "2"]], " ", "lambda"}], "+", 
+          RowBox[{"28", " ", 
+           SuperscriptBox["\[ExponentialE]", 
+            FractionBox[
+             RowBox[{"t", " ", "#1"}], "2"]], " ", "#1"}], "+", 
+          RowBox[{"2", " ", 
+           SuperscriptBox["\[ExponentialE]", 
+            FractionBox[
+             RowBox[{"t", " ", "#1"}], "2"]], " ", "lambda", " ", "#1"}], "+", 
+          RowBox[{
+           SuperscriptBox["\[ExponentialE]", 
+            FractionBox[
+             RowBox[{"t", " ", "#1"}], "2"]], " ", 
+           SuperscriptBox["#1", "2"]}]}], 
+         RowBox[{"432", "+", 
+          RowBox[{"76", " ", "lambda"}], "+", 
+          RowBox[{"2", " ", 
+           SuperscriptBox["lambda", "2"]}], "+", 
+          RowBox[{"80", " ", "#1"}], "+", 
+          RowBox[{"6", " ", "lambda", " ", "#1"}], "+", 
+          RowBox[{"3", " ", 
+           SuperscriptBox["#1", "2"]}]}]], "&"}]}], "]"}], ",", 
+     RowBox[{"4", " ", 
+      RowBox[{"RootSum", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"1152", "+", 
+          RowBox[{"416", " ", "lambda"}], "+", 
+          RowBox[{"16", " ", 
+           SuperscriptBox["lambda", "2"]}], "+", 
+          RowBox[{"432", " ", "#1"}], "+", 
+          RowBox[{"76", " ", "lambda", " ", "#1"}], "+", 
+          RowBox[{"2", " ", 
+           SuperscriptBox["lambda", "2"], " ", "#1"}], "+", 
+          RowBox[{"40", " ", 
+           SuperscriptBox["#1", "2"]}], "+", 
+          RowBox[{"3", " ", "lambda", " ", 
+           SuperscriptBox["#1", "2"]}], "+", 
+          SuperscriptBox["#1", "3"]}], "&"}], ",", 
+        RowBox[{
+         FractionBox[
+          RowBox[{
+           RowBox[{"24", " ", 
+            SuperscriptBox["\[ExponentialE]", 
+             FractionBox[
+              RowBox[{"t", " ", "#1"}], "2"]]}], "+", 
+           RowBox[{
+            SuperscriptBox["\[ExponentialE]", 
+             FractionBox[
+              RowBox[{"t", " ", "#1"}], "2"]], " ", "#1"}]}], 
+          RowBox[{"432", "+", 
+           RowBox[{"76", " ", "lambda"}], "+", 
+           RowBox[{"2", " ", 
+            SuperscriptBox["lambda", "2"]}], "+", 
+           RowBox[{"80", " ", "#1"}], "+", 
+           RowBox[{"6", " ", "lambda", " ", "#1"}], "+", 
+           RowBox[{"3", " ", 
+            SuperscriptBox["#1", "2"]}]}]], "&"}]}], "]"}]}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"2", " ", 
+      SuperscriptBox["lambda", "2"], " ", 
+      RowBox[{"RootSum", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"1152", "+", 
+          RowBox[{"416", " ", "lambda"}], "+", 
+          RowBox[{"16", " ", 
+           SuperscriptBox["lambda", "2"]}], "+", 
+          RowBox[{"432", " ", "#1"}], "+", 
+          RowBox[{"76", " ", "lambda", " ", "#1"}], "+", 
+          RowBox[{"2", " ", 
+           SuperscriptBox["lambda", "2"], " ", "#1"}], "+", 
+          RowBox[{"40", " ", 
+           SuperscriptBox["#1", "2"]}], "+", 
+          RowBox[{"3", " ", "lambda", " ", 
+           SuperscriptBox["#1", "2"]}], "+", 
+          SuperscriptBox["#1", "3"]}], "&"}], ",", 
+        RowBox[{
+         FractionBox[
+          SuperscriptBox["\[ExponentialE]", 
+           FractionBox[
+            RowBox[{"t", " ", "#1"}], "2"]], 
+          RowBox[{"432", "+", 
+           RowBox[{"76", " ", "lambda"}], "+", 
+           RowBox[{"2", " ", 
+            SuperscriptBox["lambda", "2"]}], "+", 
+           RowBox[{"80", " ", "#1"}], "+", 
+           RowBox[{"6", " ", "lambda", " ", "#1"}], "+", 
+           RowBox[{"3", " ", 
+            SuperscriptBox["#1", "2"]}]}]], "&"}]}], "]"}]}], ",", 
+     RowBox[{"2", " ", "lambda", " ", 
+      RowBox[{"RootSum", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"1152", "+", 
+          RowBox[{"416", " ", "lambda"}], "+", 
+          RowBox[{"16", " ", 
+           SuperscriptBox["lambda", "2"]}], "+", 
+          RowBox[{"432", " ", "#1"}], "+", 
+          RowBox[{"76", " ", "lambda", " ", "#1"}], "+", 
+          RowBox[{"2", " ", 
+           SuperscriptBox["lambda", "2"], " ", "#1"}], "+", 
+          RowBox[{"40", " ", 
+           SuperscriptBox["#1", "2"]}], "+", 
+          RowBox[{"3", " ", "lambda", " ", 
+           SuperscriptBox["#1", "2"]}], "+", 
+          SuperscriptBox["#1", "3"]}], "&"}], ",", 
+        RowBox[{
+         FractionBox[
+          RowBox[{
+           RowBox[{"24", " ", 
+            SuperscriptBox["\[ExponentialE]", 
+             FractionBox[
+              RowBox[{"t", " ", "#1"}], "2"]]}], "+", 
+           RowBox[{
+            SuperscriptBox["\[ExponentialE]", 
+             FractionBox[
+              RowBox[{"t", " ", "#1"}], "2"]], " ", "#1"}]}], 
+          RowBox[{"432", "+", 
+           RowBox[{"76", " ", "lambda"}], "+", 
+           RowBox[{"2", " ", 
+            SuperscriptBox["lambda", "2"]}], "+", 
+           RowBox[{"80", " ", "#1"}], "+", 
+           RowBox[{"6", " ", "lambda", " ", "#1"}], "+", 
+           RowBox[{"3", " ", 
+            SuperscriptBox["#1", "2"]}]}]], "&"}]}], "]"}]}], ",", 
+     RowBox[{"RootSum", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"1152", "+", 
+         RowBox[{"416", " ", "lambda"}], "+", 
+         RowBox[{"16", " ", 
+          SuperscriptBox["lambda", "2"]}], "+", 
+         RowBox[{"432", " ", "#1"}], "+", 
+         RowBox[{"76", " ", "lambda", " ", "#1"}], "+", 
+         RowBox[{"2", " ", 
+          SuperscriptBox["lambda", "2"], " ", "#1"}], "+", 
+         RowBox[{"40", " ", 
+          SuperscriptBox["#1", "2"]}], "+", 
+         RowBox[{"3", " ", "lambda", " ", 
+          SuperscriptBox["#1", "2"]}], "+", 
+         SuperscriptBox["#1", "3"]}], "&"}], ",", 
+       RowBox[{
+        FractionBox[
+         RowBox[{
+          RowBox[{"288", " ", 
+           SuperscriptBox["\[ExponentialE]", 
+            FractionBox[
+             RowBox[{"t", " ", "#1"}], "2"]]}], "+", 
+          RowBox[{"8", " ", 
+           SuperscriptBox["\[ExponentialE]", 
+            FractionBox[
+             RowBox[{"t", " ", "#1"}], "2"]], " ", "lambda"}], "+", 
+          RowBox[{"36", " ", 
+           SuperscriptBox["\[ExponentialE]", 
+            FractionBox[
+             RowBox[{"t", " ", "#1"}], "2"]], " ", "#1"}], "+", 
+          RowBox[{
+           SuperscriptBox["\[ExponentialE]", 
+            FractionBox[
+             RowBox[{"t", " ", "#1"}], "2"]], " ", "lambda", " ", "#1"}], "+", 
+          RowBox[{
+           SuperscriptBox["\[ExponentialE]", 
+            FractionBox[
+             RowBox[{"t", " ", "#1"}], "2"]], " ", 
+           SuperscriptBox["#1", "2"]}]}], 
+         RowBox[{"432", "+", 
+          RowBox[{"76", " ", "lambda"}], "+", 
+          RowBox[{"2", " ", 
+           SuperscriptBox["lambda", "2"]}], "+", 
+          RowBox[{"80", " ", "#1"}], "+", 
+          RowBox[{"6", " ", "lambda", " ", "#1"}], "+", 
+          RowBox[{"3", " ", 
+           SuperscriptBox["#1", "2"]}]}]], "&"}]}], "]"}]}], "}"}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{{3.9352297930854053`*^9, 3.9352298008969765`*^9}, 
+   3.9352299306144257`*^9},
+ CellLabel->"Out[2]=",ExpressionUUID->"22870207-d2c1-4941-ba0a-1940c87ac84f"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"MatrixForm", "[", "%2", "]"}]], "Input",
+ NumberMarks->False,
+ CellLabel->"In[3]:=",ExpressionUUID->"53517308-c0b2-b048-85f7-e17cf09425f9"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {
+      RowBox[{"RootSum", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"1152", "+", 
+          RowBox[{"416", " ", "lambda"}], "+", 
+          RowBox[{"16", " ", 
+           SuperscriptBox["lambda", "2"]}], "+", 
+          RowBox[{"432", " ", "#1"}], "+", 
+          RowBox[{"76", " ", "lambda", " ", "#1"}], "+", 
+          RowBox[{"2", " ", 
+           SuperscriptBox["lambda", "2"], " ", "#1"}], "+", 
+          RowBox[{"40", " ", 
+           SuperscriptBox["#1", "2"]}], "+", 
+          RowBox[{"3", " ", "lambda", " ", 
+           SuperscriptBox["#1", "2"]}], "+", 
+          SuperscriptBox["#1", "3"]}], "&"}], ",", 
+        RowBox[{
+         FractionBox[
+          RowBox[{
+           RowBox[{"48", " ", 
+            SuperscriptBox["\[ExponentialE]", 
+             FractionBox[
+              RowBox[{"t", " ", "#1"}], "2"]]}], "+", 
+           RowBox[{"20", " ", 
+            SuperscriptBox["\[ExponentialE]", 
+             FractionBox[
+              RowBox[{"t", " ", "#1"}], "2"]], " ", "lambda"}], "+", 
+           RowBox[{"2", " ", 
+            SuperscriptBox["\[ExponentialE]", 
+             FractionBox[
+              RowBox[{"t", " ", "#1"}], "2"]], " ", 
+            SuperscriptBox["lambda", "2"]}], "+", 
+           RowBox[{"16", " ", 
+            SuperscriptBox["\[ExponentialE]", 
+             FractionBox[
+              RowBox[{"t", " ", "#1"}], "2"]], " ", "#1"}], "+", 
+           RowBox[{"3", " ", 
+            SuperscriptBox["\[ExponentialE]", 
+             FractionBox[
+              RowBox[{"t", " ", "#1"}], "2"]], " ", "lambda", " ", "#1"}], 
+           "+", 
+           RowBox[{
+            SuperscriptBox["\[ExponentialE]", 
+             FractionBox[
+              RowBox[{"t", " ", "#1"}], "2"]], " ", 
+            SuperscriptBox["#1", "2"]}]}], 
+          RowBox[{"432", "+", 
+           RowBox[{"76", " ", "lambda"}], "+", 
+           RowBox[{"2", " ", 
+            SuperscriptBox["lambda", "2"]}], "+", 
+           RowBox[{"80", " ", "#1"}], "+", 
+           RowBox[{"6", " ", "lambda", " ", "#1"}], "+", 
+           RowBox[{"3", " ", 
+            SuperscriptBox["#1", "2"]}]}]], "&"}]}], "]"}], 
+      RowBox[{"16", " ", 
+       RowBox[{"RootSum", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"1152", "+", 
+           RowBox[{"416", " ", "lambda"}], "+", 
+           RowBox[{"16", " ", 
+            SuperscriptBox["lambda", "2"]}], "+", 
+           RowBox[{"432", " ", "#1"}], "+", 
+           RowBox[{"76", " ", "lambda", " ", "#1"}], "+", 
+           RowBox[{"2", " ", 
+            SuperscriptBox["lambda", "2"], " ", "#1"}], "+", 
+           RowBox[{"40", " ", 
+            SuperscriptBox["#1", "2"]}], "+", 
+           RowBox[{"3", " ", "lambda", " ", 
+            SuperscriptBox["#1", "2"]}], "+", 
+           SuperscriptBox["#1", "3"]}], "&"}], ",", 
+         RowBox[{
+          FractionBox[
+           RowBox[{
+            RowBox[{"4", " ", 
+             SuperscriptBox["\[ExponentialE]", 
+              FractionBox[
+               RowBox[{"t", " ", "#1"}], "2"]]}], "+", 
+            RowBox[{"2", " ", 
+             SuperscriptBox["\[ExponentialE]", 
+              FractionBox[
+               RowBox[{"t", " ", "#1"}], "2"]], " ", "lambda"}], "+", 
+            RowBox[{
+             SuperscriptBox["\[ExponentialE]", 
+              FractionBox[
+               RowBox[{"t", " ", "#1"}], "2"]], " ", "#1"}]}], 
+           RowBox[{"432", "+", 
+            RowBox[{"76", " ", "lambda"}], "+", 
+            RowBox[{"2", " ", 
+             SuperscriptBox["lambda", "2"]}], "+", 
+            RowBox[{"80", " ", "#1"}], "+", 
+            RowBox[{"6", " ", "lambda", " ", "#1"}], "+", 
+            RowBox[{"3", " ", 
+             SuperscriptBox["#1", "2"]}]}]], "&"}]}], "]"}]}], 
+      RowBox[{"64", " ", 
+       RowBox[{"RootSum", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"1152", "+", 
+           RowBox[{"416", " ", "lambda"}], "+", 
+           RowBox[{"16", " ", 
+            SuperscriptBox["lambda", "2"]}], "+", 
+           RowBox[{"432", " ", "#1"}], "+", 
+           RowBox[{"76", " ", "lambda", " ", "#1"}], "+", 
+           RowBox[{"2", " ", 
+            SuperscriptBox["lambda", "2"], " ", "#1"}], "+", 
+           RowBox[{"40", " ", 
+            SuperscriptBox["#1", "2"]}], "+", 
+           RowBox[{"3", " ", "lambda", " ", 
+            SuperscriptBox["#1", "2"]}], "+", 
+           SuperscriptBox["#1", "3"]}], "&"}], ",", 
+         RowBox[{
+          FractionBox[
+           SuperscriptBox["\[ExponentialE]", 
+            FractionBox[
+             RowBox[{"t", " ", "#1"}], "2"]], 
+           RowBox[{"432", "+", 
+            RowBox[{"76", " ", "lambda"}], "+", 
+            RowBox[{"2", " ", 
+             SuperscriptBox["lambda", "2"]}], "+", 
+            RowBox[{"80", " ", "#1"}], "+", 
+            RowBox[{"6", " ", "lambda", " ", "#1"}], "+", 
+            RowBox[{"3", " ", 
+             SuperscriptBox["#1", "2"]}]}]], "&"}]}], "]"}]}]},
+     {
+      RowBox[{"lambda", " ", 
+       RowBox[{"RootSum", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"1152", "+", 
+           RowBox[{"416", " ", "lambda"}], "+", 
+           RowBox[{"16", " ", 
+            SuperscriptBox["lambda", "2"]}], "+", 
+           RowBox[{"432", " ", "#1"}], "+", 
+           RowBox[{"76", " ", "lambda", " ", "#1"}], "+", 
+           RowBox[{"2", " ", 
+            SuperscriptBox["lambda", "2"], " ", "#1"}], "+", 
+           RowBox[{"40", " ", 
+            SuperscriptBox["#1", "2"]}], "+", 
+           RowBox[{"3", " ", "lambda", " ", 
+            SuperscriptBox["#1", "2"]}], "+", 
+           SuperscriptBox["#1", "3"]}], "&"}], ",", 
+         RowBox[{
+          FractionBox[
+           RowBox[{
+            RowBox[{"4", " ", 
+             SuperscriptBox["\[ExponentialE]", 
+              FractionBox[
+               RowBox[{"t", " ", "#1"}], "2"]]}], "+", 
+            RowBox[{"2", " ", 
+             SuperscriptBox["\[ExponentialE]", 
+              FractionBox[
+               RowBox[{"t", " ", "#1"}], "2"]], " ", "lambda"}], "+", 
+            RowBox[{
+             SuperscriptBox["\[ExponentialE]", 
+              FractionBox[
+               RowBox[{"t", " ", "#1"}], "2"]], " ", "#1"}]}], 
+           RowBox[{"432", "+", 
+            RowBox[{"76", " ", "lambda"}], "+", 
+            RowBox[{"2", " ", 
+             SuperscriptBox["lambda", "2"]}], "+", 
+            RowBox[{"80", " ", "#1"}], "+", 
+            RowBox[{"6", " ", "lambda", " ", "#1"}], "+", 
+            RowBox[{"3", " ", 
+             SuperscriptBox["#1", "2"]}]}]], "&"}]}], "]"}]}], 
+      RowBox[{"RootSum", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"1152", "+", 
+          RowBox[{"416", " ", "lambda"}], "+", 
+          RowBox[{"16", " ", 
+           SuperscriptBox["lambda", "2"]}], "+", 
+          RowBox[{"432", " ", "#1"}], "+", 
+          RowBox[{"76", " ", "lambda", " ", "#1"}], "+", 
+          RowBox[{"2", " ", 
+           SuperscriptBox["lambda", "2"], " ", "#1"}], "+", 
+          RowBox[{"40", " ", 
+           SuperscriptBox["#1", "2"]}], "+", 
+          RowBox[{"3", " ", "lambda", " ", 
+           SuperscriptBox["#1", "2"]}], "+", 
+          SuperscriptBox["#1", "3"]}], "&"}], ",", 
+        RowBox[{
+         FractionBox[
+          RowBox[{
+           RowBox[{"96", " ", 
+            SuperscriptBox["\[ExponentialE]", 
+             FractionBox[
+              RowBox[{"t", " ", "#1"}], "2"]]}], "+", 
+           RowBox[{"48", " ", 
+            SuperscriptBox["\[ExponentialE]", 
+             FractionBox[
+              RowBox[{"t", " ", "#1"}], "2"]], " ", "lambda"}], "+", 
+           RowBox[{"28", " ", 
+            SuperscriptBox["\[ExponentialE]", 
+             FractionBox[
+              RowBox[{"t", " ", "#1"}], "2"]], " ", "#1"}], "+", 
+           RowBox[{"2", " ", 
+            SuperscriptBox["\[ExponentialE]", 
+             FractionBox[
+              RowBox[{"t", " ", "#1"}], "2"]], " ", "lambda", " ", "#1"}], 
+           "+", 
+           RowBox[{
+            SuperscriptBox["\[ExponentialE]", 
+             FractionBox[
+              RowBox[{"t", " ", "#1"}], "2"]], " ", 
+            SuperscriptBox["#1", "2"]}]}], 
+          RowBox[{"432", "+", 
+           RowBox[{"76", " ", "lambda"}], "+", 
+           RowBox[{"2", " ", 
+            SuperscriptBox["lambda", "2"]}], "+", 
+           RowBox[{"80", " ", "#1"}], "+", 
+           RowBox[{"6", " ", "lambda", " ", "#1"}], "+", 
+           RowBox[{"3", " ", 
+            SuperscriptBox["#1", "2"]}]}]], "&"}]}], "]"}], 
+      RowBox[{"4", " ", 
+       RowBox[{"RootSum", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"1152", "+", 
+           RowBox[{"416", " ", "lambda"}], "+", 
+           RowBox[{"16", " ", 
+            SuperscriptBox["lambda", "2"]}], "+", 
+           RowBox[{"432", " ", "#1"}], "+", 
+           RowBox[{"76", " ", "lambda", " ", "#1"}], "+", 
+           RowBox[{"2", " ", 
+            SuperscriptBox["lambda", "2"], " ", "#1"}], "+", 
+           RowBox[{"40", " ", 
+            SuperscriptBox["#1", "2"]}], "+", 
+           RowBox[{"3", " ", "lambda", " ", 
+            SuperscriptBox["#1", "2"]}], "+", 
+           SuperscriptBox["#1", "3"]}], "&"}], ",", 
+         RowBox[{
+          FractionBox[
+           RowBox[{
+            RowBox[{"24", " ", 
+             SuperscriptBox["\[ExponentialE]", 
+              FractionBox[
+               RowBox[{"t", " ", "#1"}], "2"]]}], "+", 
+            RowBox[{
+             SuperscriptBox["\[ExponentialE]", 
+              FractionBox[
+               RowBox[{"t", " ", "#1"}], "2"]], " ", "#1"}]}], 
+           RowBox[{"432", "+", 
+            RowBox[{"76", " ", "lambda"}], "+", 
+            RowBox[{"2", " ", 
+             SuperscriptBox["lambda", "2"]}], "+", 
+            RowBox[{"80", " ", "#1"}], "+", 
+            RowBox[{"6", " ", "lambda", " ", "#1"}], "+", 
+            RowBox[{"3", " ", 
+             SuperscriptBox["#1", "2"]}]}]], "&"}]}], "]"}]}]},
+     {
+      RowBox[{"2", " ", 
+       SuperscriptBox["lambda", "2"], " ", 
+       RowBox[{"RootSum", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"1152", "+", 
+           RowBox[{"416", " ", "lambda"}], "+", 
+           RowBox[{"16", " ", 
+            SuperscriptBox["lambda", "2"]}], "+", 
+           RowBox[{"432", " ", "#1"}], "+", 
+           RowBox[{"76", " ", "lambda", " ", "#1"}], "+", 
+           RowBox[{"2", " ", 
+            SuperscriptBox["lambda", "2"], " ", "#1"}], "+", 
+           RowBox[{"40", " ", 
+            SuperscriptBox["#1", "2"]}], "+", 
+           RowBox[{"3", " ", "lambda", " ", 
+            SuperscriptBox["#1", "2"]}], "+", 
+           SuperscriptBox["#1", "3"]}], "&"}], ",", 
+         RowBox[{
+          FractionBox[
+           SuperscriptBox["\[ExponentialE]", 
+            FractionBox[
+             RowBox[{"t", " ", "#1"}], "2"]], 
+           RowBox[{"432", "+", 
+            RowBox[{"76", " ", "lambda"}], "+", 
+            RowBox[{"2", " ", 
+             SuperscriptBox["lambda", "2"]}], "+", 
+            RowBox[{"80", " ", "#1"}], "+", 
+            RowBox[{"6", " ", "lambda", " ", "#1"}], "+", 
+            RowBox[{"3", " ", 
+             SuperscriptBox["#1", "2"]}]}]], "&"}]}], "]"}]}], 
+      RowBox[{"2", " ", "lambda", " ", 
+       RowBox[{"RootSum", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"1152", "+", 
+           RowBox[{"416", " ", "lambda"}], "+", 
+           RowBox[{"16", " ", 
+            SuperscriptBox["lambda", "2"]}], "+", 
+           RowBox[{"432", " ", "#1"}], "+", 
+           RowBox[{"76", " ", "lambda", " ", "#1"}], "+", 
+           RowBox[{"2", " ", 
+            SuperscriptBox["lambda", "2"], " ", "#1"}], "+", 
+           RowBox[{"40", " ", 
+            SuperscriptBox["#1", "2"]}], "+", 
+           RowBox[{"3", " ", "lambda", " ", 
+            SuperscriptBox["#1", "2"]}], "+", 
+           SuperscriptBox["#1", "3"]}], "&"}], ",", 
+         RowBox[{
+          FractionBox[
+           RowBox[{
+            RowBox[{"24", " ", 
+             SuperscriptBox["\[ExponentialE]", 
+              FractionBox[
+               RowBox[{"t", " ", "#1"}], "2"]]}], "+", 
+            RowBox[{
+             SuperscriptBox["\[ExponentialE]", 
+              FractionBox[
+               RowBox[{"t", " ", "#1"}], "2"]], " ", "#1"}]}], 
+           RowBox[{"432", "+", 
+            RowBox[{"76", " ", "lambda"}], "+", 
+            RowBox[{"2", " ", 
+             SuperscriptBox["lambda", "2"]}], "+", 
+            RowBox[{"80", " ", "#1"}], "+", 
+            RowBox[{"6", " ", "lambda", " ", "#1"}], "+", 
+            RowBox[{"3", " ", 
+             SuperscriptBox["#1", "2"]}]}]], "&"}]}], "]"}]}], 
+      RowBox[{"RootSum", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"1152", "+", 
+          RowBox[{"416", " ", "lambda"}], "+", 
+          RowBox[{"16", " ", 
+           SuperscriptBox["lambda", "2"]}], "+", 
+          RowBox[{"432", " ", "#1"}], "+", 
+          RowBox[{"76", " ", "lambda", " ", "#1"}], "+", 
+          RowBox[{"2", " ", 
+           SuperscriptBox["lambda", "2"], " ", "#1"}], "+", 
+          RowBox[{"40", " ", 
+           SuperscriptBox["#1", "2"]}], "+", 
+          RowBox[{"3", " ", "lambda", " ", 
+           SuperscriptBox["#1", "2"]}], "+", 
+          SuperscriptBox["#1", "3"]}], "&"}], ",", 
+        RowBox[{
+         FractionBox[
+          RowBox[{
+           RowBox[{"288", " ", 
+            SuperscriptBox["\[ExponentialE]", 
+             FractionBox[
+              RowBox[{"t", " ", "#1"}], "2"]]}], "+", 
+           RowBox[{"8", " ", 
+            SuperscriptBox["\[ExponentialE]", 
+             FractionBox[
+              RowBox[{"t", " ", "#1"}], "2"]], " ", "lambda"}], "+", 
+           RowBox[{"36", " ", 
+            SuperscriptBox["\[ExponentialE]", 
+             FractionBox[
+              RowBox[{"t", " ", "#1"}], "2"]], " ", "#1"}], "+", 
+           RowBox[{
+            SuperscriptBox["\[ExponentialE]", 
+             FractionBox[
+              RowBox[{"t", " ", "#1"}], "2"]], " ", "lambda", " ", "#1"}], 
+           "+", 
+           RowBox[{
+            SuperscriptBox["\[ExponentialE]", 
+             FractionBox[
+              RowBox[{"t", " ", "#1"}], "2"]], " ", 
+            SuperscriptBox["#1", "2"]}]}], 
+          RowBox[{"432", "+", 
+           RowBox[{"76", " ", "lambda"}], "+", 
+           RowBox[{"2", " ", 
+            SuperscriptBox["lambda", "2"]}], "+", 
+           RowBox[{"80", " ", "#1"}], "+", 
+           RowBox[{"6", " ", "lambda", " ", "#1"}], "+", 
+           RowBox[{"3", " ", 
+            SuperscriptBox["#1", "2"]}]}]], "&"}]}], "]"}]}
+    },
+    GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Baseline}}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}}], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{3.9352299400473537`*^9},
+ CellLabel->
+  "Out[3]//MatrixForm=",ExpressionUUID->"ea203cff-0157-a840-871f-\
+d4507c90f2ef"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"P", "[", 
+   RowBox[{"t", ",", "lambda"}], "]"}], " ", "=", " ", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"0", ",", "0", ",", "1"}], "}"}], "}"}], ".", 
+   RowBox[{"ExpA", "[", 
+    RowBox[{"t", ",", "lambda"}], "]"}], ".", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", "1", "}"}], ",", 
+     RowBox[{"{", "1", "}"}], ",", 
+     RowBox[{"{", "1", "}"}]}], "}"}]}]}]], "Input",
+ CellChangeTimes->{{3.9352298323186913`*^9, 3.9352298674682617`*^9}},
+ CellLabel->"In[4]:=",ExpressionUUID->"d41eb184-b71b-ca45-9af2-8d488232384c"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"2", " ", 
+     SuperscriptBox["lambda", "2"], " ", 
+     RowBox[{"RootSum", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"1152", "+", 
+         RowBox[{"416", " ", "lambda"}], "+", 
+         RowBox[{"16", " ", 
+          SuperscriptBox["lambda", "2"]}], "+", 
+         RowBox[{"432", " ", "#1"}], "+", 
+         RowBox[{"76", " ", "lambda", " ", "#1"}], "+", 
+         RowBox[{"2", " ", 
+          SuperscriptBox["lambda", "2"], " ", "#1"}], "+", 
+         RowBox[{"40", " ", 
+          SuperscriptBox["#1", "2"]}], "+", 
+         RowBox[{"3", " ", "lambda", " ", 
+          SuperscriptBox["#1", "2"]}], "+", 
+         SuperscriptBox["#1", "3"]}], "&"}], ",", 
+       RowBox[{
+        FractionBox[
+         SuperscriptBox["\[ExponentialE]", 
+          FractionBox[
+           RowBox[{"t", " ", "#1"}], "2"]], 
+         RowBox[{"432", "+", 
+          RowBox[{"76", " ", "lambda"}], "+", 
+          RowBox[{"2", " ", 
+           SuperscriptBox["lambda", "2"]}], "+", 
+          RowBox[{"80", " ", "#1"}], "+", 
+          RowBox[{"6", " ", "lambda", " ", "#1"}], "+", 
+          RowBox[{"3", " ", 
+           SuperscriptBox["#1", "2"]}]}]], "&"}]}], "]"}]}], "+", 
+    RowBox[{"2", " ", "lambda", " ", 
+     RowBox[{"RootSum", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"1152", "+", 
+         RowBox[{"416", " ", "lambda"}], "+", 
+         RowBox[{"16", " ", 
+          SuperscriptBox["lambda", "2"]}], "+", 
+         RowBox[{"432", " ", "#1"}], "+", 
+         RowBox[{"76", " ", "lambda", " ", "#1"}], "+", 
+         RowBox[{"2", " ", 
+          SuperscriptBox["lambda", "2"], " ", "#1"}], "+", 
+         RowBox[{"40", " ", 
+          SuperscriptBox["#1", "2"]}], "+", 
+         RowBox[{"3", " ", "lambda", " ", 
+          SuperscriptBox["#1", "2"]}], "+", 
+         SuperscriptBox["#1", "3"]}], "&"}], ",", 
+       RowBox[{
+        FractionBox[
+         RowBox[{
+          RowBox[{"24", " ", 
+           SuperscriptBox["\[ExponentialE]", 
+            FractionBox[
+             RowBox[{"t", " ", "#1"}], "2"]]}], "+", 
+          RowBox[{
+           SuperscriptBox["\[ExponentialE]", 
+            FractionBox[
+             RowBox[{"t", " ", "#1"}], "2"]], " ", "#1"}]}], 
+         RowBox[{"432", "+", 
+          RowBox[{"76", " ", "lambda"}], "+", 
+          RowBox[{"2", " ", 
+           SuperscriptBox["lambda", "2"]}], "+", 
+          RowBox[{"80", " ", "#1"}], "+", 
+          RowBox[{"6", " ", "lambda", " ", "#1"}], "+", 
+          RowBox[{"3", " ", 
+           SuperscriptBox["#1", "2"]}]}]], "&"}]}], "]"}]}], "+", 
+    RowBox[{"RootSum", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"1152", "+", 
+        RowBox[{"416", " ", "lambda"}], "+", 
+        RowBox[{"16", " ", 
+         SuperscriptBox["lambda", "2"]}], "+", 
+        RowBox[{"432", " ", "#1"}], "+", 
+        RowBox[{"76", " ", "lambda", " ", "#1"}], "+", 
+        RowBox[{"2", " ", 
+         SuperscriptBox["lambda", "2"], " ", "#1"}], "+", 
+        RowBox[{"40", " ", 
+         SuperscriptBox["#1", "2"]}], "+", 
+        RowBox[{"3", " ", "lambda", " ", 
+         SuperscriptBox["#1", "2"]}], "+", 
+        SuperscriptBox["#1", "3"]}], "&"}], ",", 
+      RowBox[{
+       FractionBox[
+        RowBox[{
+         RowBox[{"288", " ", 
+          SuperscriptBox["\[ExponentialE]", 
+           FractionBox[
+            RowBox[{"t", " ", "#1"}], "2"]]}], "+", 
+         RowBox[{"8", " ", 
+          SuperscriptBox["\[ExponentialE]", 
+           FractionBox[
+            RowBox[{"t", " ", "#1"}], "2"]], " ", "lambda"}], "+", 
+         RowBox[{"36", " ", 
+          SuperscriptBox["\[ExponentialE]", 
+           FractionBox[
+            RowBox[{"t", " ", "#1"}], "2"]], " ", "#1"}], "+", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           FractionBox[
+            RowBox[{"t", " ", "#1"}], "2"]], " ", "lambda", " ", "#1"}], "+", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           FractionBox[
+            RowBox[{"t", " ", "#1"}], "2"]], " ", 
+          SuperscriptBox["#1", "2"]}]}], 
+        RowBox[{"432", "+", 
+         RowBox[{"76", " ", "lambda"}], "+", 
+         RowBox[{"2", " ", 
+          SuperscriptBox["lambda", "2"]}], "+", 
+         RowBox[{"80", " ", "#1"}], "+", 
+         RowBox[{"6", " ", "lambda", " ", "#1"}], "+", 
+         RowBox[{"3", " ", 
+          SuperscriptBox["#1", "2"]}]}]], "&"}]}], "]"}]}], "}"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.935229868427553*^9, 3.9352299581560593`*^9},
+ CellLabel->"Out[4]=",ExpressionUUID->"6392d044-3733-464a-82c6-9148e3efe2af"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Flatten", "[", "%4", "]"}]], "Input",
+ NumberMarks->False,
+ CellLabel->"In[5]:=",ExpressionUUID->"0b3401af-93a9-784f-b73d-8390013783b2"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"2", " ", 
+    SuperscriptBox["lambda", "2"], " ", 
+    RowBox[{"RootSum", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"1152", "+", 
+        RowBox[{"416", " ", "lambda"}], "+", 
+        RowBox[{"16", " ", 
+         SuperscriptBox["lambda", "2"]}], "+", 
+        RowBox[{"432", " ", "#1"}], "+", 
+        RowBox[{"76", " ", "lambda", " ", "#1"}], "+", 
+        RowBox[{"2", " ", 
+         SuperscriptBox["lambda", "2"], " ", "#1"}], "+", 
+        RowBox[{"40", " ", 
+         SuperscriptBox["#1", "2"]}], "+", 
+        RowBox[{"3", " ", "lambda", " ", 
+         SuperscriptBox["#1", "2"]}], "+", 
+        SuperscriptBox["#1", "3"]}], "&"}], ",", 
+      RowBox[{
+       FractionBox[
+        SuperscriptBox["\[ExponentialE]", 
+         FractionBox[
+          RowBox[{"t", " ", "#1"}], "2"]], 
+        RowBox[{"432", "+", 
+         RowBox[{"76", " ", "lambda"}], "+", 
+         RowBox[{"2", " ", 
+          SuperscriptBox["lambda", "2"]}], "+", 
+         RowBox[{"80", " ", "#1"}], "+", 
+         RowBox[{"6", " ", "lambda", " ", "#1"}], "+", 
+         RowBox[{"3", " ", 
+          SuperscriptBox["#1", "2"]}]}]], "&"}]}], "]"}]}], "+", 
+   RowBox[{"2", " ", "lambda", " ", 
+    RowBox[{"RootSum", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"1152", "+", 
+        RowBox[{"416", " ", "lambda"}], "+", 
+        RowBox[{"16", " ", 
+         SuperscriptBox["lambda", "2"]}], "+", 
+        RowBox[{"432", " ", "#1"}], "+", 
+        RowBox[{"76", " ", "lambda", " ", "#1"}], "+", 
+        RowBox[{"2", " ", 
+         SuperscriptBox["lambda", "2"], " ", "#1"}], "+", 
+        RowBox[{"40", " ", 
+         SuperscriptBox["#1", "2"]}], "+", 
+        RowBox[{"3", " ", "lambda", " ", 
+         SuperscriptBox["#1", "2"]}], "+", 
+        SuperscriptBox["#1", "3"]}], "&"}], ",", 
+      RowBox[{
+       FractionBox[
+        RowBox[{
+         RowBox[{"24", " ", 
+          SuperscriptBox["\[ExponentialE]", 
+           FractionBox[
+            RowBox[{"t", " ", "#1"}], "2"]]}], "+", 
+         RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+           FractionBox[
+            RowBox[{"t", " ", "#1"}], "2"]], " ", "#1"}]}], 
+        RowBox[{"432", "+", 
+         RowBox[{"76", " ", "lambda"}], "+", 
+         RowBox[{"2", " ", 
+          SuperscriptBox["lambda", "2"]}], "+", 
+         RowBox[{"80", " ", "#1"}], "+", 
+         RowBox[{"6", " ", "lambda", " ", "#1"}], "+", 
+         RowBox[{"3", " ", 
+          SuperscriptBox["#1", "2"]}]}]], "&"}]}], "]"}]}], "+", 
+   RowBox[{"RootSum", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"1152", "+", 
+       RowBox[{"416", " ", "lambda"}], "+", 
+       RowBox[{"16", " ", 
+        SuperscriptBox["lambda", "2"]}], "+", 
+       RowBox[{"432", " ", "#1"}], "+", 
+       RowBox[{"76", " ", "lambda", " ", "#1"}], "+", 
+       RowBox[{"2", " ", 
+        SuperscriptBox["lambda", "2"], " ", "#1"}], "+", 
+       RowBox[{"40", " ", 
+        SuperscriptBox["#1", "2"]}], "+", 
+       RowBox[{"3", " ", "lambda", " ", 
+        SuperscriptBox["#1", "2"]}], "+", 
+       SuperscriptBox["#1", "3"]}], "&"}], ",", 
+     RowBox[{
+      FractionBox[
+       RowBox[{
+        RowBox[{"288", " ", 
+         SuperscriptBox["\[ExponentialE]", 
+          FractionBox[
+           RowBox[{"t", " ", "#1"}], "2"]]}], "+", 
+        RowBox[{"8", " ", 
+         SuperscriptBox["\[ExponentialE]", 
+          FractionBox[
+           RowBox[{"t", " ", "#1"}], "2"]], " ", "lambda"}], "+", 
+        RowBox[{"36", " ", 
+         SuperscriptBox["\[ExponentialE]", 
+          FractionBox[
+           RowBox[{"t", " ", "#1"}], "2"]], " ", "#1"}], "+", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          FractionBox[
+           RowBox[{"t", " ", "#1"}], "2"]], " ", "lambda", " ", "#1"}], "+", 
+        RowBox[{
+         SuperscriptBox["\[ExponentialE]", 
+          FractionBox[
+           RowBox[{"t", " ", "#1"}], "2"]], " ", 
+         SuperscriptBox["#1", "2"]}]}], 
+       RowBox[{"432", "+", 
+        RowBox[{"76", " ", "lambda"}], "+", 
+        RowBox[{"2", " ", 
+         SuperscriptBox["lambda", "2"]}], "+", 
+        RowBox[{"80", " ", "#1"}], "+", 
+        RowBox[{"6", " ", "lambda", " ", "#1"}], "+", 
+        RowBox[{"3", " ", 
+         SuperscriptBox["#1", "2"]}]}]], "&"}]}], "]"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.9352299599369392`*^9},
+ CellLabel->"Out[5]=",ExpressionUUID->"4b5f2944-a6b3-d94f-84c1-28bac10877ea"]
+}, Open  ]]
+},
+WindowSize->{1152, 579.6},
+WindowMargins->{{
+  Automatic, -5.399999999999864}, {-5.399999999999977, Automatic}},
+FrontEndVersion->"14.1 for Microsoft Windows (64-bit) (July 16, 2024)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"50226b60-1a6d-524c-80b8-564e7a8cb1ee"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[576, 22, 1021, 26, 85, "Input",ExpressionUUID->"47f6d45d-0329-ff4b-93fc-e395cad36dac"],
+Cell[1600, 50, 588, 17, 46, "Output",ExpressionUUID->"0a1bdf89-233d-5d46-bf40-7018a792224f"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2225, 72, 363, 8, 28, "Input",ExpressionUUID->"1f055f82-ec0b-1047-a1b8-24ceb1640de1"],
+Cell[2591, 82, 14595, 377, 610, "Output",ExpressionUUID->"22870207-d2c1-4941-ba0a-1940c87ac84f"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17223, 464, 163, 3, 28, "Input",ExpressionUUID->"53517308-c0b2-b048-85f7-e17cf09425f9"],
+Cell[17389, 469, 15098, 385, 136, "Output",ExpressionUUID->"ea203cff-0157-a840-871f-d4507c90f2ef"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[32524, 859, 581, 16, 28, "Input",ExpressionUUID->"d41eb184-b71b-ca45-9af2-8d488232384c"],
+Cell[33108, 877, 4596, 121, 258, "Output",ExpressionUUID->"6392d044-3733-464a-82c6-9148e3efe2af"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[37741, 1003, 160, 3, 28, "Input",ExpressionUUID->"0b3401af-93a9-784f-b73d-8390013783b2"],
+Cell[37904, 1008, 4432, 119, 214, "Output",ExpressionUUID->"4b5f2944-a6b3-d94f-84c1-28bac10877ea"]
+}, Open  ]]
+}
+]
+*)
+
